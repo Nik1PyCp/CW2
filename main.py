@@ -1,16 +1,16 @@
-class Base:
-    def __init__(self):
-        self.height = 185
-class NoBase:
-    def __init__(self):
-        self.width = 100
-    def method(self):
-        print(123)
+class Person:
+    def __init__(self, name):
+        self.name = name
+    def say_hello(self):
+        print(f"Hi, I am {self.name}")
 
-class Child(Base, NoBase):
-    def print(self):
-        print(self.height)
-        self.method()
+class Employee(Person):
+    def __init__(self, name, salary):
+        super().__init__(name)
+        self.salary = salary
+    def info(self):
+        super().say_hello()
+        print(f"My salary is ${self.salary}.")
 
-child1 = Child()
-child1.print()
+e1 = Employee("Oleg", 120)
+e1.info()
