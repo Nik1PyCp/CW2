@@ -1,16 +1,21 @@
-class Person:
-    def __init__(self, name):
-        self.name = name
-    def say_hello(self):
-        print(f"Hi, I am {self.name}")
+class Animals:
+    def __init__(self):
+        self.can_run = False
+        self.can_fly = False
 
-class Employee(Person):
-    def __init__(self, name, salary):
-        super().__init__(name)
-        self.salary = salary
-    def info(self):
-        super().say_hello()
-        print(f"My salary is ${self.salary}.")
+class Horse(Animals):
+    def __init__(self):
+        super().__init__()
+        self.can_run = True
 
-e1 = Employee("Oleg", 120)
-e1.info()
+class Eangle(Animals):
+    def __init__(self):
+        super().__init__()
+        self.can_fly = True
+
+class Pegaus(Horse, Eangle):
+    pass
+
+p = Pegaus()
+print(p.can_run)
+print(p.can_fly)
